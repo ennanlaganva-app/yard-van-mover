@@ -1,0 +1,38 @@
+{
+  "id": "/yard-van-mover/?app=yard-van-mover-v1",
+  "name": "Yard Van Mover",
+  "short_name": "Van Mover",
+  "description": "Move container vans between yard blocks with simple buttons.",
+  "start_url": "/yard-van-mover/",
+  "scope": "/yard-van-mover/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f6f7f5",
+  "theme_color": "#f3c629",
+  "icons": [
+    {
+      "src": "./forklift-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./forklift-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./forklift-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./forklift.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
