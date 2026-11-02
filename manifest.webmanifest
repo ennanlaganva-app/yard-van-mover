@@ -2,7 +2,7 @@
   "id": "/yard-van-mover/?app=yard-van-mover-v1",
   "name": "Yard Van Mover",
   "short_name": "Van Mover",
-  "description": "Move container vans between yard blocks with simple buttons.",
+  "description": "Find container vans, view exact yard positions, and move them between stack locations.",
   "start_url": "/yard-van-mover/",
   "scope": "/yard-van-mover/",
   "display": "standalone",
