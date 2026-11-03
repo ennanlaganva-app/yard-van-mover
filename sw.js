@@ -1,5 +1,5 @@
-const CACHE_NAME = 'yard-van-mover-shell-v6';
-const SHELL_FILES = ['./', './index.html', './manifest.webmanifest', './forklift.svg', './forklift-192.png', './forklift-512.png'];
+const CACHE_NAME = 'yard-van-mover-shell-v7';
+const SHELL_FILES = ['./', './index.html', './firebase-sync.js', './manifest.webmanifest', './forklift.svg', './forklift-192.png', './forklift-512.png'];
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(SHELL_FILES)));
