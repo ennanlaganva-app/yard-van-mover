@@ -1,4 +1,4 @@
-const CACHE_NAME = 'yard-van-mover-shell-v7';
+const CACHE_NAME = 'yard-van-mover-shell-v8';
 const SHELL_FILES = ['./', './index.html', './firebase-sync.js', './manifest.webmanifest', './forklift.svg', './forklift-192.png', './forklift-512.png'];
 
 self.addEventListener('install', event => {
