@@ -198,73 +198,113 @@
     .container-box.back { border-color: #b4b9b5; background: repeating-linear-gradient(90deg,#eef0ed 0 8px,#e3e6e2 8px 10px); }
     .stack-label { font-size: 9px; color: #636c67; font-weight: 650; margin-top: 5px; }
     .stack-height { font-size: 8px; color: #9ca19e; margin-top: 2px; }
-    .yard-note { color: #919793; font-size: 9px; padding: 0 14px 12px; line-height: 1.5; }
-    .yard-paired { display: grid; grid-template-columns: minmax(0,1fr) 44px minmax(0,1fr); gap: 8px; align-items: stretch; padding: 13px; }
+
+    .yard-note { color: #737d75; font-size: 11px; padding: 0 14px 12px; line-height: 1.5; }
+    .yard-paired { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 7px; align-items: stretch; padding: 13px; }
     .paired-face { min-width: 0; border: 1px solid #e7e9e5; border-radius: 8px; padding: 9px; background: #fbfcfa; cursor: pointer; }
     .paired-face.active { border-color: #d1aa20; box-shadow: 0 0 0 2px rgba(243,198,41,.16); background: #fffdf5; }
-    .paired-face-title { display: flex; align-items: center; justify-content: space-between; gap: 5px; margin-bottom: 9px; color: #3e4741; font-size: 12px; font-weight: 720; }
-    .paired-face-title small { color: #818982; font-size: 10px; font-weight: 550; }
-    .paired-aisle { display: grid; place-items: center; border-left: 1px dashed #c9cec8; border-right: 1px dashed #c9cec8; color: #78827b; background: #f3f5f2; font-size: 10px; font-weight: 700; letter-spacing: .06em; writing-mode: vertical-rl; text-transform: uppercase; }
+    .paired-face-title { display: flex; align-items: center; justify-content: space-between; gap: 5px; margin-bottom: 9px; color: #3e4741; font-size: 13px; font-weight: 720; }
+    .paired-face-title small { color: #69736b; font-size: 11px; font-weight: 550; }
     .stack-bays.dynamic { grid-template-columns: repeat(var(--lane-count,4),minmax(0,1fr)); }
     .paired-face .stack-plan { padding: 4px 2px; }
-    .paired-face .stack-slot { height: 34px; }
-    .paired-face .stack-slot-number { font-size: 9px; }
-    .paired-face .stack-slot-van { font-size: 8px; }
-    .finder-layout { display: grid; grid-template-columns: minmax(0,1fr) minmax(225px,.5fr); gap: 13px; align-items: start; }
-    .finder-search-panel, .finder-detail-panel, .finder-keypad-panel { padding: 14px; }
+    .paired-face .stack-slot { height: 38px; }
+    .paired-face .stack-slot-number { font-size: 10px; }
+    .paired-face .stack-slot-van { font-size: 11px; }
+    .finder-layout { display: grid; grid-template-columns: minmax(220px,.92fr) minmax(300px,1.15fr) minmax(280px,.9fr); grid-template-areas: "search detail keypad" "stack stack stack"; gap: 10px; align-items: start; }
+    .finder-search-panel { grid-area: search; min-height: 0; }
+    .finder-keypad-panel { grid-area: keypad; position: static; align-self: start; }
+    .finder-detail-panel { grid-area: detail; }
+    .finder-stack-card { grid-area: stack; }
+    .finder-search-panel, .finder-detail-panel, .finder-keypad-panel { padding: 11px; }
     .finder-search-row { display: flex; gap: 8px; }
     .finder-query { height: 48px; min-width: 0; flex: 1; border: 1px solid #dfe3df; border-radius: 8px; padding: 0 13px; font-size: 17px; letter-spacing: .02em; }
-    .finder-search-row .btn { min-width: 74px; font-size: 13px; }
+    .finder-search-row .btn { min-width: 74px; font-size: 14px; }
     .finder-hint { color: var(--muted); font-size: 12px; line-height: 1.45; margin: 8px 0 0; }
-    .finder-results { display: grid; gap: 6px; margin-top: 12px; }
-    .finder-result { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 44px; border: 1px solid #e5e8e3; border-radius: 7px; background: #fff; padding: 7px 9px; text-align: left; }
+    .finder-results { display: grid; align-content: start; gap: 6px; margin-top: 12px; min-height: 76px; max-height: 142px; overflow-y: auto; }
+    .finder-result { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 48px; border: 1px solid #e5e8e3; border-radius: 7px; background: #fff; padding: 7px 9px; text-align: left; }
     .finder-result.active { border-color: #d2b239; background: #fff9df; }
-    .finder-result strong { display: block; color: #303834; font-size: 13px; }
-    .finder-result small { display: block; margin-top: 2px; color: #79827c; font-size: 11px; }
+    .finder-result strong { display: block; color: #303834; font-size: 15px; line-height: 1.25; overflow-wrap: anywhere; }
+    .finder-result small { display: block; margin-top: 3px; color: #68736b; font-size: 12px; }
     .finder-result .status-pill { flex: 0 0 auto; }
-    .finder-keypad-panel { position: sticky; top: 80px; }
     .finder-keypad-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 9px; }
-    .finder-keypad-head strong { font-size: 13px; }
+    .finder-keypad-head strong { font-size: 14px; }
     .finder-keypad { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 7px; }
-    .finder-key { min-height: 46px; border: 1px solid #e2e5e1; border-radius: 7px; background: #fbfcfa; color: #343c37; font-size: 16px; font-weight: 650; }
+    .finder-keypad.letters { display: flex; flex-direction: column; gap: 6px; }
+    .finder-letter-row { display: grid; grid-template-columns: repeat(10,minmax(0,1fr)); gap: 5px; }
+    .finder-letter-row:nth-child(2) { padding: 0 5%; }
+    .finder-letter-row:nth-child(3) { padding: 0 10%; }
+    .finder-key { min-height: 46px; border: 1px solid #e2e5e1; border-radius: 7px; background: #fbfcfa; color: #343c37; font-size: 17px; font-weight: 700; }
     .finder-key:active { background: #fff3be; border-color: #cfad2d; }
-    .finder-keypad-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 7px; }
-    .finder-keypad-tools .btn { min-height: 40px; font-size: 12px; }
-    .finder-status-card { border: 1px solid #e5e8e3; border-radius: 8px; background: #fbfcfa; padding: 12px; margin-top: 12px; }
-    .finder-van-title { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; }
-    .finder-van-title strong { font-size: 18px; letter-spacing: .01em; }
-    .finder-consignee { color: #5f6962; font-size: 13px; line-height: 1.45; margin-top: 5px; }
-    .finder-metadata { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; margin-top: 11px; }
-    .finder-meta { min-width: 0; border-radius: 6px; background: #fff; padding: 8px; }
-    .finder-meta span { display: block; color: #838b85; font-size: 10px; text-transform: uppercase; letter-spacing: .04em; }
-    .finder-meta strong { display: block; margin-top: 3px; color: #303834; font-size: 13px; overflow-wrap: anywhere; }
-    .finder-actions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 11px; }
-    .finder-actions .btn { min-height: 40px; font-size: 12px; }
-    .finder-stack-card { margin-top: 12px; }
-    .finder-stack-card .stack-slot { min-height: 38px; }
-    .stack-slot.target-hit { outline: 3px solid #d59205; outline-offset: 1px; background: #ffdf69; color: #2f2917; box-shadow: 0 0 0 5px rgba(229,174,24,.17); }
-    .finder-3d-wrap { margin-top: 13px; }
-    .finder-3d-controls { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding: 11px 14px 0; }
-    .finder-3d-controls span { color: #68736b; font-size: 12px; }
-    .yard3d-viewport { height: 430px; overflow: hidden; border-radius: 8px; background: linear-gradient(#f3f6f2,#e9eee8); touch-action: none; cursor: grab; perspective: 950px; margin: 12px; }
-    .yard3d-viewport:active { cursor: grabbing; }
-    .yard3d-scene { --yard-x: 56deg; --yard-z: -34deg; width: 730px; height: 330px; position: relative; margin: 28px auto; transform-style: preserve-3d; transform: rotateX(var(--yard-x)) rotateZ(var(--yard-z)); transition: transform .18s ease; }
-    .yard3d-floor { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(14,1fr); grid-template-rows: repeat(9,1fr); gap: 6px; padding: 10px; border: 2px solid #b9c2b8; border-radius: 12px; background: #e7ede5; box-shadow: 0 28px 24px rgba(48,62,48,.18); transform: translateZ(-16px); }
-    .yard3d-region { min-width: 0; border: 1px solid #bdc6bc; border-radius: 7px; background: #d6dfd5; padding: 5px; box-shadow: 0 7px 0 #aeb9ad; transform: translateZ(17px); }
-    .yard3d-region strong { display: block; color: #38453a; font-size: 11px; transform: rotateZ(34deg) rotateX(-56deg); transform-origin: top left; white-space: nowrap; }
-    .yard3d-blocks { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(11px,1fr); gap: 3px; height: calc(100% - 16px); margin-top: 5px; }
-    .yard3d-region.vertical .yard3d-blocks { grid-auto-flow: row; grid-template-columns: 1fr; grid-auto-rows: minmax(10px,1fr); }
-    .yard3d-block { display: grid; place-items: center; min-width: 0; border: 1px solid #abb6aa; border-radius: 2px; background: repeating-linear-gradient(0deg,#f8edbd 0 5px,#e9d98e 5px 8px); color: #52491f; font-size: 7px; transform: translateZ(8px); }
-    .yard3d-block.target { border: 2px solid #c27b00; background: #ffc92e; color: #29230f; box-shadow: 0 0 0 3px rgba(244,184,26,.35), 0 7px 0 #b97a05; transform: translateZ(16px) scale(1.06); }
-    .yard3d-a { grid-column: 2 / span 8; grid-row: 8 / span 2; }
-    .yard3d-b { grid-column: 12 / span 3; grid-row: 2 / span 7; }
-    .yard3d-c { grid-column: 5 / span 7; grid-row: 1 / span 2; }
-    .yard3d-df { grid-column: 6 / span 3; grid-row: 3 / span 2; }
-    .yard3d-db { grid-column: 6 / span 3; grid-row: 5 / span 2; }
-    .yard3d-ef { grid-column: 2 / span 3; grid-row: 3 / span 2; }
-    .yard3d-eb { grid-column: 2 / span 3; grid-row: 5 / span 2; }
-    .yard3d-aisle { grid-column: 9 / span 2; grid-row: 3 / span 4; display: grid; place-items: center; color: #667365; background: repeating-linear-gradient(45deg,#f8faf7 0 7px,#e1e7df 7px 9px); font-size: 10px; font-weight: 700; letter-spacing: .08em; writing-mode: vertical-rl; }
-    .finder-empty { padding: 20px 12px; border: 1px dashed #dce1dc; border-radius: 8px; color: #68736b; font-size: 13px; line-height: 1.5; margin-top: 11px; }
+    .finder-keypad-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 8px; }
+    .finder-keypad-tools .btn { min-height: 40px; padding: 7px 5px; font-size: 12px; }
+    .finder-detail-card { border: 1px solid #e5e8e3; border-radius: 8px; background: #fbfcfa; padding: 13px; }
+    .finder-detail-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 9px; }
+    .finder-detail-head strong { font-size: 14px; }
+    .finder-van-title { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; min-height: 30px; }
+    .finder-van-title strong { color: #252d28; font-size: 23px; line-height: 1.2; letter-spacing: .01em; overflow-wrap: anywhere; }
+    .finder-consignee { color: #4e5a52; font-size: 14px; line-height: 1.45; margin-top: 5px; min-height: 20px; }
+    .finder-metadata { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; margin-top: 12px; }
+    .finder-meta { min-width: 0; min-height: 58px; border: 1px solid #eef0ec; border-radius: 6px; background: #fff; padding: 9px; }
+    .finder-meta span { display: block; color: #707a72; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
+    .finder-meta strong { display: block; margin-top: 4px; color: #303834; font-size: 14px; line-height: 1.3; overflow-wrap: anywhere; }
+    .finder-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .finder-actions .btn { min-height: 42px; font-size: 13px; }
+    .finder-stack-card { margin-top: 0; }
+    .finder-stack-card .stack-slot { min-height: 42px; }
+    .finder-stack-placeholder { border: 1px dashed #d9dfd9; border-radius: 7px; padding: 10px 12px; margin-bottom: 10px; color: #647067; background: #fbfcfa; font-size: 13px; }
+    .finder-empty { padding: 12px 10px; border: 1px dashed #dce1dc; border-radius: 8px; color: #68736b; font-size: 13px; line-height: 1.5; }
+    .finder-empty-status { display: inline-flex; align-items: center; min-height: 24px; padding: 4px 8px; border-radius: 999px; color: #6d756e; background: #eef1ed; font-size: 11px; font-weight: 650; }
+    .finder-page-head { margin-bottom: 9px; align-items: center; }
+    .finder-page-head .eyebrow { margin-bottom: 2px; }
+    .finder-page-head h1 { font-size: 19px; }
+    .finder-page-head .page-desc { margin-top: 2px; font-size: 12px; }
+    .finder-search-panel .panel-title { font-size: 12px; }
+    .finder-status-tools { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: 7px; }
+    .finder-status-select { display: grid; gap: 2px; min-width: 126px; }
+    .finder-status-select span { color: #707a72; font-size: 9px; text-transform: uppercase; letter-spacing: .04em; }
+    .finder-status-select select { height: 34px; border: 1px solid #dfe3df; border-radius: 6px; background: #fff; color: #303834; padding: 0 8px; font-size: 12px; font-weight: 650; }
+    @media (max-width: 1050px) {
+      .finder-layout { grid-template-columns: minmax(0,1fr) minmax(200px,.8fr); grid-template-areas: "search keypad" "detail detail" "stack stack"; }
+      .finder-layout.letters-active { grid-template-columns: minmax(0,1fr); grid-template-areas: "search" "keypad" "detail" "stack"; }
+    }
+    @media (max-width: 760px) {
+      .yard-note { font-size: 12px; }
+      .yard-paired { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 5px; padding: 8px; }
+      .paired-face { padding: 7px 5px; }
+      .paired-face-title { font-size: 12px; }
+      .paired-face-title small { font-size: 10px; }
+      .paired-face .stack-slot { height: 38px; }
+      .finder-layout { grid-template-columns: minmax(0,1fr) minmax(160px,.85fr); grid-template-areas: "search keypad" "detail detail" "stack stack"; gap: 8px; }
+      .finder-layout.letters-active { grid-template-columns: minmax(0,1fr); grid-template-areas: "search" "keypad" "detail" "stack"; }
+      .finder-search-panel, .finder-detail-panel, .finder-keypad-panel { padding: 10px; }
+      .finder-search-panel { min-height: 0; }
+      .finder-search-row { gap: 5px; }
+      .finder-query { height: 44px; padding: 0 8px; font-size: 15px; }
+      .finder-search-row .btn { min-width: 51px; padding: 8px 5px; font-size: 12px; }
+      .finder-results { min-height: 54px; max-height: 96px; margin-top: 7px; }
+      .finder-result { align-items: flex-start; padding: 7px; }
+      .finder-result strong { font-size: 14px; }
+      .finder-result small { font-size: 11px; }
+      .finder-result .status-pill { font-size: 9px; }
+      .finder-keypad-panel { position: static; }
+      .finder-keypad-head strong { font-size: 12px; }
+      .finder-keypad-head .btn { min-height: 31px; padding: 5px; font-size: 10px; }
+      .finder-keypad { gap: 5px; }
+      
+      .finder-key { min-height: 36px; font-size: 15px; }
+      .finder-keypad-tools { gap: 5px; }
+      .finder-keypad-tools .btn { min-height: 32px; font-size: 10px; line-height: 1.15; }
+      .finder-detail-head strong { font-size: 13px; }
+      .finder-van-title strong { font-size: 20px; }
+      .finder-consignee { font-size: 13px; }
+      .finder-metadata { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 6px; }
+      .finder-meta { min-height: 46px; padding: 6px; }
+      .finder-meta span { font-size: 10px; }
+      .finder-meta strong { font-size: 12px; }
+      .finder-actions { gap: 6px; margin-top: 8px; }
+      .finder-actions .btn { flex: 1 1 calc(50% - 6px); min-height: 36px; font-size: 12px; }
+    }
+
     .guide-intro { border: 1px solid #ecd985; background: #fff9df; border-radius: 9px; padding: 15px 17px; color: #675b30; line-height: 1.55; }
     .guide-intro strong { color: #342f20; }
     .guide-toc { display: flex; flex-wrap: wrap; gap: 7px; margin: 13px 0 16px; }
@@ -501,25 +541,21 @@
       .inventory-row { min-height: 58px; }
       .move-block { max-width: 112px; }
       .yard-side { grid-template-columns: 1fr; }
-      .yard-paired { grid-template-columns: minmax(0,1fr) 29px minmax(0,1fr); gap: 5px; padding: 8px; }
+      .yard-paired { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 5px; padding: 8px; }
       .paired-face { padding: 6px 4px; }
       .paired-face-title { font-size: 10px; }
       .paired-face-title small { font-size: 9px; }
-      .paired-aisle { font-size: 8px; }
       .paired-face .stack-bays { gap: 3px; }
       .paired-face .stack-slot { height: 39px; padding: 2px 2px; }
-      .paired-face .stack-slot-number { font-size: 9px; }
-      .paired-face .stack-slot-van { font-size: 8px; }
-      .finder-layout { grid-template-columns: 1fr; }
+      .paired-face .stack-slot-number { font-size: 11px; }
+      .paired-face .stack-slot-van { font-size: 11px; }
+      .finder-layout { grid-template-columns: minmax(0,1fr) minmax(120px,.72fr); gap: 8px; }
       .finder-keypad-panel { position: static; }
       .finder-query { height: 52px; font-size: 18px; }
       .finder-key { min-height: 49px; font-size: 18px; }
       .finder-van-title strong { font-size: 20px; }
       .finder-consignee { font-size: 14px; }
       .finder-meta strong { font-size: 14px; }
-      .finder-3d-controls span { font-size: 12px; }
-      .yard3d-viewport { height: 330px; margin: 8px; }
-      .yard3d-scene { margin-left: 30px; transform-origin: 40% 40%; }
       .finder-stack-card .stack-slot { min-height: 44px; }
       .finder-result { min-height: 52px; }
       .finder-result strong { font-size: 14px; }
@@ -538,7 +574,7 @@
       .record-meta { font-size: 11px; }
       .status-pill { font-size: 11px; padding: 4px 8px; }
       .stack-slot-number { font-size: 10px; }
-      .stack-slot-van { font-size: 10px; }
+      .stack-slot-van { font-size: 12px; }
       .stack-pile .stack-slot { height: 42px; flex-basis: 42px; }
       .guide-section p, .guide-section ul, .guide-section ol { font-size: 13px; }
       .guide-detail strong, .guide-step strong { font-size: 13px; }
@@ -637,6 +673,16 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
     }
+  
+    .van-cell { font-size: 15px; font-weight: 720; }
+    .inventory-primary > strong, .shift-van-code { font-size: 16px; }
+    .stack-slot-van { font-size: 12px; }
+    @media (max-width: 760px) {
+      .van-cell { font-size: 15px; }
+      .inventory-primary > strong, .shift-van-code { font-size: 15px; }
+      .stack-slot-van { font-size: 11px; }
+    }
+
   </style>
 </head>
 <body>
@@ -706,16 +752,16 @@
 
           <section class="panel guide-section" id="guide-existing"><h2>3. Enter vans already in the yard</h2><p>Use <strong>Add vans</strong> during setup to record containers that are physically in a bay before you begin regular operation.</p><ol><li>Enter the van number or identifier exactly as shown; Add vans accepts any text format. If it matches a Loading list record, its consignee and voyage details fill in automatically.</li><li>For a new number, add the consignee and optional vessel and voyage. Multiple consignee names can be separated with semicolons and are marked LCL.</li><li>Choose the bay/side and block, then tap the exact open tile in the stack diagram. Each tile shows the recalculated position number, stack, and level; occupied spots are disabled.</li><li>Choose <strong>Add van to this location</strong>. The record and a time-stamped “Existing stock added” entry are saved in History.</li></ol><p>The screen can be used repeatedly to build the opening stock list. You can later search any van, change its location, print a picking tag, or update its status.</p><button class="btn small guide-action" data-go-page="manual">Open Add vans</button></section>
 
-          <section class="panel guide-section" id="guide-yard"><h2>4. Yard map, blocks, and stack numbering</h2><p>Choose a bay in <strong>Yard view</strong>, then select one of its block tiles to see the vans and the visual stack. Bays D and E show their front and back faces together with the forklift aisle between them.</p><div class="guide-grid">
+          <section class="panel guide-section" id="guide-yard"><h2>4. Yard map, blocks, and stack numbering</h2><p>Choose a bay in <strong>Yard view</strong>, then select one of its block tiles to see the vans and the visual stack. Bays D and E show their front and back faces with a small separation between them.</p><div class="guide-grid">
             <div class="guide-detail"><strong>Bay and block layout</strong><p>Bay A has 11 blocks, Bay B has 12, Bay C has 7, Bay D has 5 front and 5 back blocks, and Bay E has 7 front and 7 back blocks. D/E labels show their side, for example <b>D-F1</b> and <b>E-B1</b>. The whole yard has 54 block faces and up to 718 van slots.</p></div>
             <div class="guide-detail"><strong>Stack capacities by bay</strong><p>Bays A, B, and C: <b>4 / 4 / 4 / 3</b>. Bay D Front: <b>4 / 4</b>; Bay D Back: <b>4 / 4 / 4</b>. Both Bay E faces: <b>4 / 4 / 4</b>.</p></div>
-          </div><div class="walkthrough-note">Position <b>#1</b> starts at the rear stack’s bottom. Count upward, then continue from the next stack toward the front. In Bays D and E, the rear lanes sit beside the aisle on both faces, following the yard sketch. Empty lower stacks are skipped so the first accessible occupied spot is always position #1. Position numbers recalculate when a van moves or leaves the active yard.</div><p>Select an occupied tile to open its move options. Choose an open tile to place a van in that exact stack spot. The inventory list is sorted in the same order as the stacking diagram.</p><button class="btn small guide-action" data-go-page="yard">Open Yard view</button></section>
+          </div><div class="walkthrough-note">Position <b>#1</b> starts at the rear stack’s bottom. Count upward, then continue from the next stack toward the front. In Bays D and E, the rear-to-front order follows each face independently, as shown in the yard sketch. Empty lower stacks are skipped so the first accessible occupied spot is always position #1. Position numbers recalculate when a van moves or leaves the active yard.</div><p>Select an occupied tile to open its move options. Choose an open tile to place a van in that exact stack spot. The inventory list is sorted in the same order as the stacking diagram.</p><button class="btn small guide-action" data-go-page="yard">Open Yard view</button></section>
 
-          <section class="panel guide-section" id="guide-search"><h2>5. Use Finder</h2><ol><li>Open <strong>Finder</strong> and type a van number or part of its identifier. Use the on-screen number pad; switch to letters when needed.</li><li>Choose a matching van to see its consignee, vessel/voyage, status and date, picking tag, and highlighted stack location.</li><li>Select an occupied stack tile to change bay, block, stack, and level. Only open locations can be selected.</li><li>If the van has no yard location, use <b>Place location</b>. Use the status buttons to record CY Stripped or Withdrawn.</li><li>If no record is found, choose <b>Add van</b> to open the manual entry form with the search text filled in.</li><li>Choose <b>3D yard view</b> and drag the yard to rotate it. The van’s block is highlighted.</li></ol><p>Finder results and changes save automatically in this browser.</p><button class="btn small guide-action" data-go-page="finder">Open Finder</button></section>
+          <section class="panel guide-section" id="guide-search"><h2>5. Use Finder</h2><ol><li>Open <strong>Finder</strong> and enter a van number or consignee. The number pad sits on the right beside search. Switch to the QWERTY letter pad for consignee searches.</li><li>The detail and stack panels remain visible when the search is blank. Choose a matching van to see its consignee, vessel/voyage, status and date, picking tag, and highlighted stack location.</li><li>Select an occupied stack tile to choose a new bay, block, and exact open stack position.</li><li>If the van has no yard location, use <b>Place location</b>. Use Change status to switch among In yard, CY Stripped, and Withdrawn, including restoring a withdrawn van. If its old spot is taken, assign it a new location.</li><li>If no record is found, choose <b>Add van</b> to open manual entry with the search text filled in.</li></ol><p>Finder results and changes save automatically in this browser.</p><button class="btn small guide-action" data-go-page="finder">Open Finder</button></section>
 
           <section class="panel guide-section" id="guide-shift"><h2>6. Quick Move with buttons</h2><p>Choose the source bay/side and block, tap <strong>Move</strong> beside a van, choose any destination bay/side and block, then select an open stack and level before confirming. The button layout works on touch screens and avoids scrolling through long block columns.</p><ul><li>Source and destination choices are button tiles. You can move across any bay, including between Bay A and Bay E Back.</li><li>Choose a specific open destination stack position. Full blocks and the van’s current block are unavailable.</li><li>After a move, the page stays on the destination block so you can continue work there.</li><li>Each successful move updates the location and adds a time-stamped History entry.</li></ul><p><a href="../">Open the original version with column-based Quick shift.</a></p><button class="btn small guide-action" data-go-page="shift">Open Quick Move</button></section>
 
-          <section class="panel guide-section" id="guide-status"><h2>7. Status, dates, and History</h2><p>In the Yard inventory row, use the status buttons to keep a van’s progress visible.</p><div class="guide-grid">
+          <section class="panel guide-section" id="guide-status"><h2>7. Status, dates, and History</h2><p>In Finder, use <strong>Change status</strong> to switch among In yard, CY Stripped, and Withdrawn. A withdrawn van can be restored; if its old spot is occupied, assign it a new location.</p><div class="guide-grid">
             <div class="guide-detail"><strong>CY Stripped</strong><p>Marks the van as CY Stripped and saves the date and time. It remains assigned to its yard position until moved or withdrawn.</p></div>
             <div class="guide-detail"><strong>Withdrawn</strong><p>Marks the van withdrawn, records its time and last location, and removes it from the active yard layout. The record remains in the Loading list and History.</p></div>
           </div><p>The History page shows incoming full records, withdrawals, location moves, and status changes, newest first. Use its filter or click a van’s history from Search to narrow the list. Times display in the device’s local time zone.</p><button class="btn small guide-action" data-go-page="history">Open History</button></section>
@@ -756,7 +802,7 @@
       const blocksFor = section => Array.from({ length: SECTION_BY_KEY[section]?.blocks || 0 }, (_, i) => String(i + 1).padStart(2, '0'));
       const STACK_CAPACITIES = [4,4,4,3];
       const PAGE_SIZE = 15;
-      const state = { records: [], history: [], page: 'loading', loadingPage: 1, selectedBay: 'A', selectedFace: '', selectedBlock: '01', manualSection: 'A', manualBlock: '01', manualSlot: '', manualDraft: { van:'', consignee:'', vessel:'', voyage:'', loadType:'' }, manualClearDraft: false, loadingFilter: 'all', historyFilter: 'all', historyVanId: '', pendingRows: null, pendingFile: '', sharedSnapshot: false, photoObjectUrl: null, ocrRunning: false, shiftFromSection: 'A', shiftFromBlock: '01', shiftToSection: 'A', quickMoveId: '', quickDestSection: '', quickDestBlock: '', quickDestSlot: '', shiftFromScroll: 0, shiftToScroll: 0, highlightRecordId: '', finderQuery: '', finderRecordId: '', finderKeypadOpen: true, finderAlphaMode: false, yard3dRotation: { x: 56, z: -34 }, migratedLocationCount: 0 };
+      const state = { records: [], history: [], page: 'loading', loadingPage: 1, selectedBay: 'A', selectedFace: '', selectedBlock: '01', manualSection: 'A', manualBlock: '01', manualSlot: '', manualDraft: { van:'', consignee:'', vessel:'', voyage:'', loadType:'' }, manualClearDraft: false, loadingFilter: 'all', historyFilter: 'all', historyVanId: '', pendingRows: null, pendingFile: '', sharedSnapshot: false, photoObjectUrl: null, ocrRunning: false, shiftFromSection: 'A', shiftFromBlock: '01', shiftToSection: 'A', quickMoveId: '', quickDestSection: '', quickDestBlock: '', quickDestSlot: '', shiftFromScroll: 0, shiftToScroll: 0, highlightRecordId: '', finderQuery: '', finderRecordId: '', finderKeypadOpen: true, finderAlphaMode: false, migratedLocationCount: 0 };
       let tesseractLoadPromise = null;
       const $ = (selector, root = document) => root.querySelector(selector);
       const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
@@ -1099,11 +1145,11 @@
         if (state.selectedBay === 'D' || state.selectedBay === 'E') {
           const pair = state.selectedBay === 'D' ? ['D-back','D-front'] : ['E-front','E-back'];
           const reverse = key => (state.selectedBay === 'D' && key === 'D-front') || (state.selectedBay === 'E' && key === 'E-back');
-          pairedVisual = `<div class="panel"><div class="panel-head"><div><div class="panel-title">${sectionBlockLabel(selectedSection,state.selectedBlock)} paired faces</div><div class="panel-sub">Both sides share this block number. The aisle separates the two forklift access faces.</div></div><span class="panel-meta">Tap a stack spot to choose or move a van</span></div><div class="yard-paired"><div class="paired-face ${selectedSection === pair[0] ? 'active' : ''}" data-yard-face="${pair[0]}"><div class="paired-face-title"><span>${sectionLabel(pair[0])}</span><small>${sectionItems(pair[0],state.selectedBlock).length} / ${blockCapacity(SECTION_BY_KEY[pair[0]].bay,SECTION_BY_KEY[pair[0]].face)}</small></div>${renderStackFace(pair[0],state.selectedBlock,reverse(pair[0]))}</div><div class="paired-aisle">Forklift aisle</div><div class="paired-face ${selectedSection === pair[1] ? 'active' : ''}" data-yard-face="${pair[1]}"><div class="paired-face-title"><span>${sectionLabel(pair[1])}</span><small>${sectionItems(pair[1],state.selectedBlock).length} / ${blockCapacity(SECTION_BY_KEY[pair[1]].bay,SECTION_BY_KEY[pair[1]].face)}</small></div>${renderStackFace(pair[1],state.selectedBlock,reverse(pair[1]))}</div></div><div class="yard-note">Stack order follows each face’s aisle: rear lanes sit beside the aisle; position numbering starts at the rear bottom, moves upward, then toward the front.</div></div>`;
+          pairedVisual = `<div class="panel"><div class="panel-head"><div><div class="panel-title">${sectionBlockLabel(selectedSection,state.selectedBlock)} paired faces</div><div class="panel-sub">Both sides share this block number. The front and back faces are displayed together with a small gap between them.</div></div><span class="panel-meta">Tap a stack spot to choose or move a van</span></div><div class="yard-paired"><div class="paired-face ${selectedSection === pair[0] ? 'active' : ''}" data-yard-face="${pair[0]}"><div class="paired-face-title"><span>${sectionLabel(pair[0])}</span><small>${sectionItems(pair[0],state.selectedBlock).length} / ${blockCapacity(SECTION_BY_KEY[pair[0]].bay,SECTION_BY_KEY[pair[0]].face)}</small></div>${renderStackFace(pair[0],state.selectedBlock,reverse(pair[0]))}</div><div class="paired-face ${selectedSection === pair[1] ? 'active' : ''}" data-yard-face="${pair[1]}"><div class="paired-face-title"><span>${sectionLabel(pair[1])}</span><small>${sectionItems(pair[1],state.selectedBlock).length} / ${blockCapacity(SECTION_BY_KEY[pair[1]].bay,SECTION_BY_KEY[pair[1]].face)}</small></div>${renderStackFace(pair[1],state.selectedBlock,reverse(pair[1]))}</div></div><div class="yard-note">Stack order is counted separately on each face, from the rear bottom upward and then toward the front.</div></div>`;
         }
         const stackVisual = state.selectedBay === 'D' || state.selectedBay === 'E' ? pairedVisual : `<div class="panel"><div class="panel-head"><div><div class="panel-title">Exact stack positions · ${sectionBlockLabel(selectedSection,state.selectedBlock)}</div><div class="panel-sub">Select an occupied tile to move that van, or an open tile to place one.</div></div></div>${renderStackFace(selectedSection,state.selectedBlock)}<div class="yard-note">Position #1 starts at the rear bottom, moves up, then continues stack by stack toward the front. Open spaces are skipped when numbering.</div></div>`;
         $('#yardPage').innerHTML = `
-          <div class="page-head"><div><div class="eyebrow">Yard inventory</div><h1>Yard view</h1><p class="page-desc">Choose a bay and block. Bays D and E show both faces across their forklift aisle.</p></div><div class="head-actions"><button class="btn" id="yardExport">${icon('download')}Backup</button><button class="btn primary" id="yardShare">${icon('share')}Share snapshot</button></div></div>
+          <div class="page-head"><div><div class="eyebrow">Yard inventory</div><h1>Yard view</h1><p class="page-desc">Choose a bay and block. Bays D and E show their front and back faces with a small separation between them.</p></div><div class="head-actions"><button class="btn" id="yardExport">${icon('download')}Backup</button><button class="btn primary" id="yardShare">${icon('share')}Share snapshot</button></div></div>
           <div class="panel"><div class="panel-head"><div><div class="panel-title">Bay overview</div><div class="panel-sub">Choose a bay side, then select a block tile below.</div></div><span class="panel-meta">${assignedRecords().length} vans placed</span></div><div class="bay-strip">${bayCards}</div></div>
           <div class="yard-lower"><div class="panel"><div class="panel-head"><div><div class="panel-title">${sectionLabel(selectedSection)} blocks</div><div class="panel-sub">Block labels identify the bay and side. Capacity depends on its stack lanes.</div></div><span class="panel-meta">${sectionCount} vans · ${blocks.length} blocks</span></div><div class="blocks">${blocksHtml}</div></div>
             <div class="yard-side"><div class="panel"><div class="panel-head"><div><div class="panel-title">${sectionBlockLabel(selectedSection,state.selectedBlock)} inventory</div><div class="panel-sub">Sorted by the displayed rear-to-front stack position.</div></div><span class="panel-meta">${selectedItems.length} / ${capacity} vans</span></div><div class="inventory-list">${inventory}</div></div>
@@ -1138,30 +1184,53 @@
         return state.records.filter(record => norm(record.van).includes(query) || norm(record.consignee).includes(query)).sort((a,b) => (norm(a.van) === query ? -1 : 0) - (norm(b.van) === query ? -1 : 0) || a.van.localeCompare(b.van,undefined,{numeric:true}));
       }
       function finderStackVisual(record) {
-        if (!record?.bay || !record.block || record.status === 'withdrawn') return '';
+        if (!record?.bay || !record.block || record.status === 'withdrawn') return finderStackBlank();
         const section = sectionForRecord(record), block = record.block;
         if (record.bay === 'D' || record.bay === 'E') {
           const pair = record.bay === 'D' ? ['D-back','D-front'] : ['E-front','E-back'];
           const reverse = key => (record.bay === 'D' && key === 'D-front') || (record.bay === 'E' && key === 'E-back');
-          return `<div class="yard-paired">${pair.map((key,index) => `<div class="paired-face ${key === section ? 'active' : ''}"><div class="paired-face-title"><span>${sectionLabel(key)} ${sectionBlockLabel(key,block)}</span><small>${sectionItems(key,block).length} / ${blockCapacity(SECTION_BY_KEY[key].bay,SECTION_BY_KEY[key].face)}</small></div>${renderStackFace(key,block,reverse(key),record.id)}</div>${index === 0 ? '<div class="paired-aisle">Forklift aisle</div>' : ''}</div>`).join('')}</div>`;
+          return `<div class="yard-paired">${pair.map(key => `<div class="paired-face ${key === section ? 'active' : ''}"><div class="paired-face-title"><span>${sectionLabel(key)} · ${sectionBlockLabel(key,block)}</span><small>${sectionItems(key,block).length} / ${blockCapacity(SECTION_BY_KEY[key].bay,SECTION_BY_KEY[key].face)}</small></div>${renderStackFace(key,block,reverse(key),record.id)}</div>`).join('')}</div>`;
         }
         return `<div class="finder-stack-card">${renderStackFace(section,block,false,record.id)}</div>`;
       }
-      function renderFinder3d(record) {
-        const layouts = { A:'yard3d-a',B:'yard3d-b',C:'yard3d-c','D-front':'yard3d-df','D-back':'yard3d-db','E-front':'yard3d-ef','E-back':'yard3d-eb' };
-        const regions = SECTION_CONFIG.map(section => `<div class="yard3d-region ${layouts[section.key]} ${section.key === 'B' ? 'vertical' : ''}"><strong>${escapeHtml(section.label)}</strong><div class="yard3d-blocks">${blocksFor(section.key).map(block => `<div class="yard3d-block ${record && sectionForRecord(record) === section.key && record.block === block ? 'target' : ''}" title="${sectionBlockLabel(section.key,block)}">${Number(block)}</div>`).join('')}</div></div>`).join('');
-        const rotation = state.yard3dRotation;
-        return `<div class="finder-3d-controls"><span>Drag the map to rotate it. The van’s block is highlighted.</span><div class="head-actions"><button class="btn small" id="rotateYardLeft">↶ Rotate</button><button class="btn small" id="resetYardRotation">Reset view</button><button class="btn small" id="rotateYardRight">Rotate ↷</button></div></div><div class="yard3d-viewport" id="yard3dViewport" aria-label="Rotatable 3D yard map"><div class="yard3d-scene" id="yard3dScene" style="--yard-x:${rotation.x}deg;--yard-z:${rotation.z}deg"><div class="yard3d-floor">${regions}<div class="yard3d-aisle">Forklift aisle</div></div></div></div>`;
+      function finderStackBlank() {
+        const capacities = [4,4,4,3];
+        const lanes = capacities.map((height,index) => `<div class="stack-lane"><div class="stack-pile">${Array.from({length:height},(_,level) => `<div class="stack-slot empty"><span class="stack-slot-number">Open</span><span class="stack-slot-van">Level ${level + 1}</span></div>`).join('')}</div><div class="stack-label">Stack ${index + 1}</div><div class="stack-height">${height} high</div></div>`).join('');
+        return `<div class="stack-plan"><div class="stack-caption"><span>FRONT</span><span>REAR</span></div><div class="stack-bays dynamic" style="--lane-count:4">${lanes}</div></div>`;
       }
       function renderFinder() {
         const matches = finderMatches();
         let selected = matches.find(record => record.id === state.finderRecordId) || matches.find(record => norm(record.van) === norm(state.finderQuery)) || (matches.length === 1 ? matches[0] : null);
         if (selected) state.finderRecordId = selected.id;
         else if (!matches.some(record => record.id === state.finderRecordId)) state.finderRecordId = '';
-        const resultList = matches.length ? matches.slice(0,10).map(record => `<button type="button" class="finder-result ${selected?.id === record.id ? 'active' : ''}" data-finder-select="${escapeHtml(record.id)}"><span><strong>${escapeHtml(record.van)}${record.loadType === 'LCL' ? ' · LCL' : ''}</strong><small>${escapeHtml(record.consignee || 'No consignee listed')} · ${escapeHtml(record.bay ? locationDetail(record) : 'Not assigned')}</small></span><span class="status-pill ${statusClass(record)}">${escapeHtml(statusLabel(record))}</span></button>`).join('') : state.finderQuery.trim() ? `<div class="finder-empty">No saved record matches “${escapeHtml(state.finderQuery)}”.<br><button type="button" class="btn primary" id="finderAddNew" style="margin-top:10px">Add van “${escapeHtml(state.finderQuery.trim())}”</button></div>` : '<div class="finder-hint">Enter a van number to find its status and exact yard position.</div>';
-        const detail = selected ? `<div class="finder-status-card"><div class="finder-van-title"><strong>${escapeHtml(selected.van)}</strong>${selected.loadType === 'LCL' ? '<span class="type-pill">LCL</span>' : ''}<span class="status-pill ${statusClass(selected)}">${statusLabel(selected)}</span></div><div class="finder-consignee">${escapeHtml(selected.consignee || 'No consignee listed')}</div><div class="finder-metadata"><div class="finder-meta"><span>Location</span><strong>${escapeHtml(locationDetail(selected))}</strong></div><div class="finder-meta"><span>Stack spot</span><strong>${selected.bay && selected.block && selected.stack ? `Position #${positionNumber(selected)} · Stack ${selected.stack} · Level ${selected.level}` : 'Not assigned'}</strong></div><div class="finder-meta"><span>Vessel</span><strong>${escapeHtml(selected.vessel || '—')}</strong></div><div class="finder-meta"><span>Voyage</span><strong>${escapeHtml(selected.voyage || '—')}</strong></div><div class="finder-meta"><span>Last status time</span><strong>${escapeHtml(statusTimestamp(selected) || '—')}</strong></div><div class="finder-meta"><span>Load type</span><strong>${escapeHtml(selected.loadType || 'FCL')}</strong></div></div><div class="finder-actions">${selected.status === 'withdrawn' ? '<button type="button" class="btn" id="finderHistory">View history</button>' : `<button type="button" class="btn primary" id="finderPlace">${selected.bay ? 'Change location' : 'Place location'}</button><button type="button" class="btn" id="finderCy" ${selected.status === 'cy-stripped' ? 'disabled' : ''}>CY Stripped</button><button type="button" class="btn danger" id="finderWithdraw">Withdrawn</button>`}<button type="button" class="btn" id="finderPicking">Picking tag</button>${selected.bay && selected.status !== 'withdrawn' ? '<button type="button" class="btn" id="finder3dToggle">3D yard view</button>' : ''}</div></div>${selected.bay && selected.status !== 'withdrawn' ? `<div class="panel finder-stack-card"><div class="panel-head"><div><div class="panel-title">Stack position · ${escapeHtml(formatLocation(selected))}</div><div class="panel-sub">The matching van is highlighted. Tap an occupied tile to change its location.</div></div></div>${finderStackVisual(selected)}</div><div class="panel finder-3d-wrap hidden" id="finder3dPanel"><div class="panel-head"><div><div class="panel-title">3D yard layout</div><div class="panel-sub">Shows all block faces and the selected van’s block.</div></div><button type="button" class="btn small" id="close3dYard">Close</button></div>${renderFinder3d(selected)}</div>` : ''}` : '';
-        const keyboard = state.finderKeypadOpen ? `<div class="finder-keypad-panel panel"><div class="finder-keypad-head"><strong>${state.finderAlphaMode ? 'Letters' : 'Number pad'}</strong><button type="button" class="btn small" id="finderKeypadHide">Hide</button></div><div class="finder-keypad" style="grid-template-columns:repeat(${state.finderAlphaMode ? 6 : 3},minmax(0,1fr))">${(state.finderAlphaMode ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('') : '1234567890'.split('')).map(key => `<button type="button" class="finder-key" data-finder-key="${key}">${key}</button>`).join('')}</div><div class="finder-keypad-tools"><button type="button" class="btn" id="finderKeypadMode">${state.finderAlphaMode ? '123 Number pad' : 'ABC Letters'}</button><button type="button" class="btn" id="finderBackspace">⌫ Backspace</button><button type="button" class="btn" id="finderClear">Clear</button><button type="button" class="btn" id="finderSpace">Space</button></div></div>` : '<div class="finder-keypad-panel panel"><button type="button" class="btn" id="finderKeypadShow">Show number pad</button></div>';
-        $('#finderPage').innerHTML = `<div class="page-head"><div><div class="eyebrow">Van search and action</div><h1>Finder</h1><p class="page-desc">Find a van, see its exact stack position, update its status, or choose a new location.</p></div></div><div class="finder-layout"><div class="panel finder-search-panel"><div class="panel-title">Search van number</div><div class="finder-search-row" style="margin-top:9px"><input class="finder-query" id="finderQuery" type="search" autocomplete="off" autocapitalize="characters" placeholder="Enter van number" value="${escapeHtml(state.finderQuery)}" aria-label="Search by van number"><button type="button" class="btn primary" id="finderSearchBtn">Find</button></div><p class="finder-hint">Search accepts any van ID format. Use the on-screen keys or your device keyboard.</p><div class="finder-results">${resultList}</div>${detail}</div>${keyboard}</div>`;
+        const resultList = matches.length
+          ? matches.slice(0,10).map(record => `<button type="button" class="finder-result ${selected?.id === record.id ? 'active' : ''}" data-finder-select="${escapeHtml(record.id)}"><span><strong>${escapeHtml(record.van)}${record.loadType === 'LCL' ? ' · LCL' : ''}</strong><small>${escapeHtml(record.consignee || 'No consignee listed')} · ${escapeHtml(record.bay ? locationDetail(record) : 'Not assigned')}</small></span><span class="status-pill ${statusClass(record)}">${escapeHtml(statusLabel(record))}</span></button>`).join('')
+          : state.finderQuery.trim()
+            ? `<div class="finder-empty">No saved record matches “${escapeHtml(state.finderQuery)}”.<br><button type="button" class="btn primary" id="finderAddNew" style="margin-top:9px">Add van “${escapeHtml(state.finderQuery.trim())}”</button></div>`
+            : '<div class="finder-empty">Search by van number or consignee. Results will appear here.</div>';
+        const status = selected ? `<div class="finder-status-tools"><span class="status-pill ${statusClass(selected)}">${escapeHtml(statusLabel(selected))}</span><label class="finder-status-select"><span>Change status</span><select id="finderStatus" aria-label="Change van status"><option value="in-yard" ${selected.status === 'in-yard' ? 'selected' : ''}>In yard</option><option value="cy-stripped" ${selected.status === 'cy-stripped' ? 'selected' : ''}>CY Stripped</option><option value="withdrawn" ${selected.status === 'withdrawn' ? 'selected' : ''}>Withdrawn</option></select></label></div>` : '<span class="finder-empty-status">Waiting for search</span>';
+        const meta = (label,value) => `<div class="finder-meta"><span>${label}</span><strong>${escapeHtml(value || '—')}</strong></div>`;
+        const details = selected
+          ? `<div class="finder-van-title"><strong>${escapeHtml(selected.van)}</strong>${selected.loadType === 'LCL' ? '<span class="type-pill">LCL</span>' : ''}${status}</div><div class="finder-consignee">${escapeHtml(selected.consignee || 'No consignee listed')}</div>`
+          : '<div class="finder-van-title"><strong>—</strong><span class="type-pill" style="visibility:hidden">LCL</span>' + status + '</div><div class="finder-consignee">Consignee will appear here after a van is selected.</div>';
+        const stackText = selected?.stack ? 'Position #' + positionNumber(selected) + ' · Stack ' + selected.stack + ' · Level ' + selected.level : selected ? (selected.bay ? 'Position not set' : 'Not assigned') : '—';
+        const metadata = `<div class="finder-metadata">${meta('Bay / block', selected?.bay ? formatLocation(selected) : selected ? 'Not assigned' : '—')}${meta('Stack position',stackText)}${meta('Vessel',selected?.vessel || '—')}${meta('Voyage',selected?.voyage || '—')}${meta('Status date / time',selected ? statusTimestamp(selected) || '—' : '—')}${meta('Load type',selected?.loadType || '—')}</div>`;
+        const actions = selected
+          ? `<button type="button" class="btn primary" id="finderPlace" ${selected.status === 'withdrawn' ? 'disabled' : ''}>${selected.bay ? 'Change location' : 'Place location'}</button>${selected.status === 'withdrawn' ? '<button type="button" class="btn" id="finderHistory">View history</button>' : ''}<button type="button" class="btn" id="finderPicking">Picking tag</button>`
+          : '<button type="button" class="btn" disabled>Place location</button><button type="button" class="btn" disabled>CY Stripped</button><button type="button" class="btn danger" disabled>Withdrawn</button><button type="button" class="btn" disabled>Picking tag</button>';
+        const stack = selected && selected.bay && selected.block && selected.status !== 'withdrawn' ? finderStackVisual(selected) : finderStackBlank();
+        const stackNote = selected && selected.bay && selected.block && selected.status !== 'withdrawn'
+          ? `Matching van highlighted at ${escapeHtml(formatLocation(selected))}. Tap an occupied or open tile to choose a new exact position.`
+          : selected?.status === 'withdrawn' ? 'This van is withdrawn and has no active stack position.'
+          : selected ? 'This van has no assigned yard position yet. Use Place location to choose one.'
+          : 'Search for a van to highlight its block and exact stack position.';
+        const finderKeyMarkup = state.finderAlphaMode
+          ? ['QWERTYUIOP','ASDFGHJKL','ZXCVBNM-'].map(row => '<div class="finder-letter-row">' + row.split('').map(key => '<button type="button" class="finder-key" data-finder-key="' + key + '">' + key + '</button>').join('') + '</div>').join('')
+          : '1234567890'.split('').map(key => '<button type="button" class="finder-key" data-finder-key="' + key + '">' + key + '</button>').join('');
+        const keyboard = state.finderKeypadOpen
+          ? `<div class="finder-keypad-panel panel"><div class="finder-keypad-head"><strong>${state.finderAlphaMode ? 'Letters' : 'Number pad'}</strong><button type="button" class="btn small" id="finderKeypadHide">Hide</button></div><div class="finder-keypad ${state.finderAlphaMode ? 'letters' : ''}">${finderKeyMarkup}</div><div class="finder-keypad-tools"><button type="button" class="btn" id="finderKeypadMode">${state.finderAlphaMode ? '123 Number pad' : 'ABC Letters'}</button><button type="button" class="btn" id="finderBackspace">⌫ Backspace</button><button type="button" class="btn" id="finderClear">Clear</button><button type="button" class="btn" id="finderSpace">Space</button></div></div>`
+          : '<div class="finder-keypad-panel panel"><div class="finder-keypad-head"><strong>Number pad</strong></div><button type="button" class="btn" id="finderKeypadShow">Show number pad</button></div>';
+         $('#finderPage').innerHTML = `<div class="page-head finder-page-head"><div><div class="eyebrow">Van search and action</div><h1>Finder</h1><p class="page-desc">Search, view the exact stack position, update status, and move a van.</p></div></div><div class="finder-layout${state.finderAlphaMode ? ' letters-active' : ''}"><div class="panel finder-search-panel"><div class="panel-title">Search van / consignee</div><div class="finder-search-row" style="margin-top:9px"><input class="finder-query" id="finderQuery" type="search" autocomplete="off" autocapitalize="characters" placeholder="Enter van number" value="${escapeHtml(state.finderQuery)}" aria-label="Search by van number or consignee"><button type="button" class="btn primary" id="finderSearchBtn">Find</button></div><p class="finder-hint">Use the fixed keypad or type on your keyboard.</p><div class="finder-results">${resultList}</div></div>${keyboard}<div class="panel finder-detail-panel"><div class="finder-detail-head"><strong>Location and van details</strong></div><div class="finder-detail-card">${details}${metadata}<div class="finder-actions">${actions}</div></div></div><div class="panel finder-stack-card"><div class="panel-head"><div><div class="panel-title">Stack position</div><div class="panel-sub">Rear-to-front order · bottom-to-top numbering</div></div></div><div class="finder-stack-placeholder">${stackNote}</div>${stack}</div></div>`;
         $('#finderQuery').addEventListener('input',event => { const value = event.target.value, caret = event.target.selectionStart; state.finderQuery = value; state.finderRecordId = ''; renderFinder(); const input = $('#finderQuery'); input?.focus(); input?.setSelectionRange(caret,caret); });
         $('#finderQuery').addEventListener('keydown',event => { if (event.key === 'Enter') { const first = finderMatches()[0]; if (first) { state.finderRecordId = first.id; renderFinder(); } } });
         $('#finderSearchBtn').addEventListener('click',() => { const first = finderMatches()[0]; if (first) { state.finderRecordId = first.id; renderFinder(); } else if (state.finderQuery.trim()) $('#finderAddNew')?.focus(); });
@@ -1175,34 +1244,36 @@
         $('#finderClear')?.addEventListener('click',() => { state.finderQuery = ''; state.finderRecordId = ''; renderFinder(); $('#finderQuery').focus(); });
         $('#finderSpace')?.addEventListener('click',() => { const input = $('#finderQuery'), caret = input.selectionStart ?? input.value.length; state.finderQuery = input.value.slice(0,caret) + ' ' + input.value.slice(input.selectionEnd ?? caret); renderFinder(); const next = $('#finderQuery'); next.focus(); next.setSelectionRange(caret + 1,caret + 1); });
         $('#finderPlace')?.addEventListener('click',() => showLocationPicker(selected.id));
-        $('#finderCy')?.addEventListener('click',() => setVanStatus(selected.id,'cy-stripped'));
-        $('#finderWithdraw')?.addEventListener('click',() => setVanStatus(selected.id,'withdrawn'));
+        $('#finderStatus')?.addEventListener('change',event => setVanStatus(selected.id,event.target.value));
         $('#finderPicking')?.addEventListener('click',() => showPickingTag(selected.id));
         $('#finderHistory')?.addEventListener('click',() => { state.historyVanId = selected.id; state.historyFilter = 'outgoing'; setPage('history'); });
-        $('#finder3dToggle')?.addEventListener('click',() => { $('#finder3dPanel')?.classList.toggle('hidden'); $('#finder3dPanel')?.scrollIntoView({block:'nearest',behavior:'smooth'}); });
-        $('#close3dYard')?.addEventListener('click',() => $('#finder3dPanel')?.classList.add('hidden'));
         $$('.finder-stack-card .stack-slot[data-yard-section]').forEach(button => button.addEventListener('click',() => {
+          if (!selected || !selected.bay || selected.status === 'withdrawn') return;
           const key = button.dataset.yardSection, info = SECTION_BY_KEY[key], block = button.dataset.yardBlock, [stack,level] = button.dataset.stackSlot.split(':').map(Number);
           if (!info) return;
           if (button.dataset.id) showLocationPicker(button.dataset.id,{section:key,block,slot:`${stack}:${level}`}); else showSlotPicker(info.bay,info.face,block,stack,level);
         }));
-        const viewport = $('#yard3dViewport'), scene = $('#yard3dScene');
-        if (viewport && scene) {
-          let drag = null;
-          viewport.addEventListener('pointerdown',event => { drag = { x:event.clientX,y:event.clientY,rotation:{...state.yard3dRotation} }; viewport.setPointerCapture(event.pointerId); });
-          viewport.addEventListener('pointermove',event => { if (!drag) return; state.yard3dRotation.x = Math.max(28,Math.min(78,drag.rotation.x + (event.clientY - drag.y) * .25)); state.yard3dRotation.z = drag.rotation.z + (event.clientX - drag.x) * .35; scene.style.setProperty('--yard-x',`${state.yard3dRotation.x}deg`); scene.style.setProperty('--yard-z',`${state.yard3dRotation.z}deg`); });
-          viewport.addEventListener('pointerup',() => { drag = null; }); viewport.addEventListener('pointercancel',() => { drag = null; });
-        }
-        $('#rotateYardLeft')?.addEventListener('click',() => { state.yard3dRotation.z -= 18; renderFinder(); $('#finder3dPanel')?.classList.remove('hidden'); });
-        $('#rotateYardRight')?.addEventListener('click',() => { state.yard3dRotation.z += 18; renderFinder(); $('#finder3dPanel')?.classList.remove('hidden'); });
-        $('#resetYardRotation')?.addEventListener('click',() => { state.yard3dRotation = {x:56,z:-34}; renderFinder(); $('#finder3dPanel')?.classList.remove('hidden'); });
       }
+
       function setVanStatus(id, status) {
-        const record = state.records.find(r => r.id === id); if (!record) return;
-        const at = new Date().toISOString();
-        if (status === 'cy-stripped') { record.status = 'cy-stripped'; record.cyStrippedAt = at; addHistory('cy-stripped', record, `CY Stripped · ${locationDetail(record)}`); }
-        else if (status === 'withdrawn') { record.lastPosition = positionNumber(record); const lastLocation = locationDetail(record); record.status = 'withdrawn'; record.withdrawnAt = at; addHistory('withdrawal', record, `Outgoing withdrawal · ${lastLocation}`); }
-        record.updatedAt = at; save(); render(); toast(`${record.van} marked ${status === 'cy-stripped' ? 'CY Stripped' : 'Withdrawn'}`);
+        const record = state.records.find(r => r.id === id); if (!record || !['in-yard','cy-stripped','withdrawn'].includes(status)) return;
+        if (record.status === status) return;
+        const previousStatus = statusLabel(record), at = new Date().toISOString();
+        if (status === 'withdrawn') {
+          record.lastPosition = positionNumber(record);
+          const lastLocation = locationDetail(record);
+          record.status = 'withdrawn'; record.withdrawnAt = at;
+          addHistory('withdrawal', record, `Outgoing withdrawal · ${lastLocation}`);
+        } else {
+          const hasSlot = !!(record.bay && record.block && record.stack && record.level);
+          const slotTaken = hasSlot && state.records.some(other => other.id !== record.id && other.status !== 'withdrawn' && other.bay === record.bay && normalizeFace(other.bay,other.face) === normalizeFace(record.bay,record.face) && other.block === record.block && other.stack === record.stack && other.level === record.level);
+          const oldLocation = locationDetail(record);
+          if (slotTaken) { record.bay = ''; record.face = ''; record.block = ''; record.stack = 0; record.level = 0; }
+          record.status = status; record.withdrawnAt = '';
+          if (status === 'cy-stripped') { record.cyStrippedAt = at; addHistory('cy-stripped', record, `CY Stripped · ${slotTaken ? 'previous location is occupied; assign a new spot' : locationDetail(record)}`); }
+          else { record.cyStrippedAt = ''; addHistory('status-change', record, `Status changed from ${previousStatus} to In yard${slotTaken ? ` · previous spot ${oldLocation} is occupied; choose a new location` : ''}`); }
+        }
+        record.updatedAt = at; save(); render(); toast(`${record.van} status changed to ${statusLabel(record)}`);
       }
       function showSlotPicker(bay, face, block, stack, level) {
         const records = bayItems(bay, block, face).sort((a,b) => a.van.localeCompare(b.van, undefined, { numeric: true }));
@@ -1355,7 +1426,7 @@
         save(); render(); toast(`${record.van} moved to ${sectionBlockLabel(destinationSection,destinationBlock)}`);
       }
       function historyName(type) {
-        return ({ 'incoming-full':'Incoming full', 'opening-stock':'Existing stock added', 'withdrawal':'Outgoing withdrawal', 'cy-stripped':'CY Stripped', 'location-move':'Location moved', 'stack-move':'Stack position moved', 'put-away':'Put-away', 'guide-update':'Guide details updated' })[type] || 'Activity';
+        return ({ 'incoming-full':'Incoming full', 'opening-stock':'Existing stock added', 'withdrawal':'Outgoing withdrawal', 'cy-stripped':'CY Stripped', 'location-move':'Location moved', 'stack-move':'Stack position moved', 'put-away':'Put-away', 'guide-update':'Guide details updated', 'status-change':'Status changed' })[type] || 'Activity';
       }
       function renderHistory() {
         const incoming = state.history.filter(event => event.type === 'incoming-full').length;

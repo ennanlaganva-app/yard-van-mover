@@ -1,6 +1,6 @@
 # Yard Van Mover
 
-A separate, free app for locating and shifting container vans in the yard. Finder searches van IDs, shows status and a highlighted stack location, opens picking tags, and displays a rotatable 3D yard layout. Quick Move uses step-by-step buttons for the source, van, destination bay/block, and exact destination stack position. Bays D and E show their paired front/back faces around the forklift aisle. It has its own Android app name and yellow forklift icon. The original Container Van Locator remains available at its own site.
+A separate, free app for locating and shifting container vans in the yard. Finder searches van IDs, shows status and a highlighted stack location, and opens picking tags. Quick Move uses step-by-step buttons for the source, van, destination bay/block, and exact destination stack position. Bays D and E show their paired front/back faces with a small separation between blocks. It has its own Android app name and yellow forklift icon. The original Container Van Locator remains available at its own site.
 
 ## Install on Android
 
@@ -24,6 +24,5 @@ When changing a van’s location, choose its bay/side, block, stack, and level. 
 
 ## Finder
 
-Use the **Finder** page to search by van ID. The on-screen keypad can switch between numbers and letters. Choose a result to see its consignee, status and timestamp, vessel/voyage, location, picking tag, and stack illustration. The selected van is highlighted in the result list and yard map. If no record exists, choose **Add van** to open the manual entry page with the searched ID filled in. An assigned van can be moved by selecting its highlighted stack tile, choosing a new exact position, or using Quick Move.
+Use the **Finder** page to search by van ID. The on-screen number pad sits on the right; the letter pad uses a QWERTY layout. Choose a result to see its consignee, status and timestamp, vessel/voyage, location, picking tag, and stack illustration. The selected van is highlighted in the result list and stack illustration. If no record exists, choose **Add van** to open the manual entry page with the searched ID filled in. An assigned van can be moved by selecting its highlighted stack tile, choosing a new exact position, or using Quick Move.
 
-The **3D yard view** is opened from an assigned Finder result. Drag the yard to rotate it, use the rotate controls for small adjustments, and choose Reset view to return to the default angle. The target block is highlighted.
